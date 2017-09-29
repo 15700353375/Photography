@@ -22,7 +22,7 @@ module.exports = {
   devServer: {
     // 设置默认监听端口，如果省略，默认为”8080“
     port: 2222,
-    contentBase: "./public",//本地服务器所加载的页面所在的目录
+    contentBase: "./dist",//本地服务器所加载的页面所在的目录
     historyApiFallback: true,//不跳转
     inline: true//实时刷新
   },
@@ -64,6 +64,16 @@ module.exports = {
 
 
     ]
+  },
+
+  resolve: {
+    extensions: ['.js', '.json','.less','.scss'],
+    alias: {
+      '@Src': SRC_PATH,
+      '@Components': path.join(SRC_PATH, 'components'),
+      '@Util': path.join(SRC_PATH, 'util'),
+      '@View': path.join(SRC_PATH, 'view')
+    }
   },
 
   plugins: [
